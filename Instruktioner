@@ -1,0 +1,74 @@
+Instruktioner
+
+----------------------Error meddelande -------------------------------------
+1. installera node.js från nodejs.org (installera INTE necessary tools där du får en checkbox du kan fylla i)
+NPM - Node Package Manager =  NuGet Package Manager
+
+Vid felmeddelande - WINDOWS POWERSHELL - ENABLE SCRIPT 
+1. Öppna upp powershell som administratör genom att göra 
+    1. tryck på start-ikonen längst ner till vänster
+    2. skriv powershell 
+    3. på Windows PowerShell tryck höger musknapp och välj Run As Administrator
+    4. Skriv följande i Powershell: Set-ExecutionPolicy RemoteSigned -force
+    5. Klart nu kan du stänga ner Powershell.
+
+--------------------------------GitHub------------------------------------------------------
+
+1. Skapa en ny git-repository på GitHub, gör den gärna publih. Du behöver inte lägga till någon readme eller någon gitignore.
+
+2. I ditt projekt se till att koppla till din github genom följande kommandon:
+    1. Ställ dig i mappen som ditt projekt är i (ex. c:\projects\assignment)
+    2. Skriv följande i konsolen: git remote add origin https://github.com/dinläänktilldingitthub
+
+3. Skriv sedan följande kommandon:
+    1. git add .
+    2. git commit -m "ett meddelande"
+    3. git push origin master
+
+4. För att ladda upp infomrationen för själva inlämningsuppgift så gör du följande:
+    1. skriv ett text-dokument (word eller anteckningar) där du klipper in din githublänk: https://github.com/dinläänktilldingitthub
+    2. gå till inlämningsuppgiften och sedan där det står välj fil väljer du att ladda in ditt text-dokument som du nyss skapade
+    3. Sedan trycker du på knappen Lämna in.
+
+----------------------------Guide-------------------------------------------------------------
+React:
+1. installera node.js från nodejs.org (installera INTE necessary tools där du får en checkbox du kan fylla i)
+NPM - Node Package Manager =  NuGet Package Manager
+
+2. Se till att du ligger i rätt katalog exempel. cd lektion-5\react eller höger musknapp på katogen välj open in terminal.
+3. installera react genom NPM: npm install -g create-react-app
+4. för att skapa en react applikation skriv: create-react-app demoapp
+5. gå in i den nya mappen: cd demoapp
+6. kör din applikation med: npm start
+7. installera ett snippet för react: simple react snippets
+
+Angular:
+1. i terminalen skriv: npm install -g @angular/cli
+  (I terminalen): ng new angularapp. 
+    * Nej till att använda router
+    * Välj CSS med pilarna och tryck enter
+
+2.  skapa en ny app genom att skriva: ng new demoapp
+3.  kör applikationen genom att först gå in i mappen: cd demoapp
+    sedan skriv ng serve --open
+
+2.  Kopiera över katalogerna CSS, JS och FONTS till Assets-katalogerna
+3.  Ändra lägg in länkningarna till stylingen och till JS i index.html filen som finns i SRC-katalogen.
+    * se till att lägga till src="assets/......." för filerna så att de pekar rätt
+
+5.  Rensa allt som finns i app.component.html och lägg in all kod förutom som finns i bodyn in här.
+
+VUE:
+FÖLJ INSTRUKTIONERNA PÅ: https://cli.vuejs.org/guide/installation.html
+
+1.  installera node.js från nodejs.org (installera INTE necessary tools där du får en checkbox du kan fylla i)
+2.  i terminalen skriv: npm install -g @vue/cli
+3.  skapa en ny app genom att skriva: vue create demoapp
+4.  kör applikationen genom att först gå in i mappen: cd demoapp
+    sedan skriv npm run serve
+
+Installera även extention vetur
+--------------------------------------------------------------------------------------------------
+Övrigt: 
+1. installera bootstrap genom NPM: npm install bootstrap
+2. lägg till bootstrap i index.js
