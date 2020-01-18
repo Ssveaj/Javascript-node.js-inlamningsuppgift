@@ -4,12 +4,10 @@ class Downloads extends Component {
     state = { 
       downloads: {}
      }
-     componentDidMount() {
-      fetch("https://inlupp-fa.azurewebsites.net/api/downloadss")
-      .then(res => res.json())
-      .then(data => {
-      this.setState({downloads: data})
-      })
+     async componentDidMount() {
+      const dl = await fetch('https://inlupp-fa.azurewebsites.net/api/downloads');
+      const dldata = await dl.json();
+      this.setState({downloads: dldata});
     }
     render() { 
         return ( 
@@ -26,7 +24,7 @@ class Downloads extends Component {
                               <div id="offlineProgress"></div>                              
                             </div>
                             <div className="col-6 pl-0">
-                            <p className="mb-0">Online</p>
+                            <p className="mb-0">Offline</p>
                               <p className="mb-0">{this.state.downloads.offlineAmount} </p>
                               <h2></h2>
                             </div>

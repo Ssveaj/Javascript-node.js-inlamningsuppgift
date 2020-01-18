@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navigation/Navbar';
 import Welcome from './components/welcome';
-import Users from './components/Users';
-import Project from './components/Icons/TotalProject';
+import TotalUsers from './components/Total/TotalUsers';
+import TotalProject from './components/Total/TotalProjects';
 import Downloads from './components/Downloads';
 import TotalSalesChart from './components/Total/TotalSalesChart';
 import TotalSales from './components/Icons/TotalSales';
 import TotalPurchases from './components/Icons/TotalPurchases';
 import TotalOrders from './components/Icons/TotalOrders';
 import TotalGrowth from './components/Icons/TotalGrowth';
-import Tickets from './components/Tickets';
-import Updates from './components/Updates';
+import Tickets from './components/Tickets/Tickets';
+import Updates from './components/Updates/Updates';
 import Distribution from './components/Distribution';
-import SaleReport from './components/SaleReport';
-import SalesReportOverview from './components/SalesReportOverview';
-import Openinvoices from './components/Invoice/Openinvoices';
+import SaleReport from './components/SalesReport/SaleReport';
+import SalesReportOverview from './components/SalesReport/SalesReportOverview';
+import OpenInvoices from './components/Invoices/OpenInvoices';
 import Footer from './components/Footer';
 
 function App() {
@@ -29,8 +29,8 @@ function App() {
           <div className="row">
             <div className="col-xl-6 grid-margin">
               <div className="row">              
-                <Users />
-                <Project />
+                <TotalUsers />
+                <TotalProject />
               </div>
               <Downloads />
             </div>
@@ -57,7 +57,7 @@ function App() {
               </div>
             </div>
           </div>
-         <Openinvoices /> 
+         <OpenInvoices /> 
         </div>
         <Footer />
       </div>

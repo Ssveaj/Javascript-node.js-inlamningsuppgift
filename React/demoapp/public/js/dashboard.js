@@ -264,7 +264,6 @@
         options: areaOptions
       });
     }
-    
     fetch('https://inlupp-fa.azurewebsites.net/api/total-projects')
       .then(res => res.json())
       .then(data => {
@@ -342,11 +341,9 @@
       });
     }
   })
-
     fetch('https://inlupp-fa.azurewebsites.net/api/downloads')
       .then(res => res.json())
       .then(data => {
-
     if ($('#offlineProgress').length) {
       var bar = new ProgressBar.Circle(offlineProgress, {
         color: '#000',
@@ -395,7 +392,7 @@
       bar.animate(data[0].circleValue); // Number from 0.0 to 1.0
     }
   })
-     fetch('https://inlupp-fa.azurewebsites.net/api/downloads')
+    fetch('https://inlupp-fa.azurewebsites.net/api/downloads')
        .then(res => res.json())
        .then(data => {
     if ($('#onlineProgress').length) {
@@ -445,7 +442,7 @@
       bar.text.style.fontSize = '1rem';
       bar.animate(data[1].circleValue); // Number from 0.0 to 1.0
     }
-      })
+  })
 
     if ($('#offlineProgressDark').length) {
       var bar = new ProgressBar.Circle(offlineProgressDark, {
@@ -768,9 +765,9 @@
         }
       });
     }
-    fetch('https://inlupp-fa.azurewebsites.net/api/distribution')
-       .then(res => res.json())
-       .then(data => {
+     fetch('https://inlupp-fa.azurewebsites.net/api/distribution')
+        .then(res => res.json())
+        .then(data => {
     if ($("#distribution-chart").length) {
       var areaData = {
         labels: data.labels,
@@ -803,13 +800,13 @@
           var text = [];
           text.push('<div class="distribution-chart">');
             text.push('<div class="item"><div class="legend-label" style="border: 3px solid ' + chart.data.datasets[0].backgroundColor[0] + '"></div>');
-            text.push(`${data.cities[0]}`);
+            text.push(data.cities[0]);
             text.push('</div>');
             text.push('<div class="item"><div class="legend-label" style="border: 3px solid ' + chart.data.datasets[0].backgroundColor[1] + '"></div>');
-            text.push((`${data.cities[1]}`));
+            text.push(data.cities[1]);
             text.push('</div>');
             text.push('<div class="item"><div class="legend-label" style="border: 3px solid ' + chart.data.datasets[0].backgroundColor[2] + '"></div>');
-            text.push((`${data.cities[2]}`));
+            text.push(data.cities[2]);
             text.push('</div>');
           text.push('</div>');
           return text.join("");
@@ -827,7 +824,7 @@
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#000";
       
-          var text = data.procentage + "%",
+          var text = data.procentage+'%',
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2;
       
@@ -845,7 +842,7 @@
       document.getElementById('distribution-legend').innerHTML = distributionChart.generateLegend();
     }
   })
-
+    
     if ($("#distribution-chart-dark").length) {
       var areaData = {
         labels: ["Jan", "Feb", "Mar"],
@@ -992,11 +989,11 @@
         plugins: distributionChartPlugins
       });
       document.getElementById('distribution-legend').innerHTML = distributionChart.generateLegend();
+    
     }
-    fetch('https://inlupp-fa.azurewebsites.net/api/sales-report')
-       .then(res => res.json())
-       .then(data => {
-
+     fetch('https://inlupp-fa.azurewebsites.net/api/sales-report')
+        .then(res => res.json())
+        .then(data => {
     if ($("#sale-report-chart").length) {
       var CurrentChartCanvas = $("#sale-report-chart").get(0).getContext("2d");
       var CurrentChart = new Chart(CurrentChartCanvas, {

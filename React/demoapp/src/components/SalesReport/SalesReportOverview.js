@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 
 class SalesReportOverview extends Component {
-    state = {  }
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      salesreports: {}
+    }  
+  }
+
+    componentDidMount() {
+      fetch("https://inlupp-fa.azurewebsites.net/api/sales-report")
+      .then(res => res.json())
+      .then(data => {
+      this.setState({salesreports: data})
+      })
+    }
     render() { 
         return ( 
             <div className="col-md-5 col-lg-6 col-xl-5">
@@ -11,20 +25,20 @@ class SalesReportOverview extends Component {
                       <div className="d-flex flex-wrap justify-content-start mt-3 mr-4">
                         <div className="mr-3">
                           <p className="mb-0">Downloads</p>
-                          <h4>13,956</h4>
+                          <h4>{this.state.salesreports.downloads}</h4>
                         </div>
                         <div className="mr-3">
                           <p className="mb-0">Purchases</p>
-                          <h4>55,123</h4>
+                          <h4>{this.state.salesreports.purchases}</h4>
                         </div>
                         <div className="mr-3">
                           <p className="mb-0">Users</p>
-                          <h4>29829</h4>
+                          <h4>{this.state.salesreports.users}</h4>
                         </div>
                       </div>
                       <div className="d-flex mb-3">
                         <i className="mdi mdi-arrow-expand-up mb-0 text-success mr-2 mt-1"></i>
-                        <p className="mb-0 text-dark">15% more than last week</p>
+                        <p className="mb-0 text-dark">{this.state.salesreports.growth}</p>
                       </div>
                       <div className="d-flex flex-wrap mb-5">
                         <button className="btn btn-info mt-3 mr-2">Update</button>

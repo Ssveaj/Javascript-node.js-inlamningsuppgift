@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Users extends Component {
+class TotalUsers extends Component {
     state = { 
       totalUsers: {}
      }
@@ -30,4 +30,4 @@ class Users extends Component {
     }
 }
  
-export default Users;
+export default TotalUsers;

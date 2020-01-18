@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Openinvoice from './Openinvoice'
+import Openinvoice from './Openinvoice';
 
-class Openinvoices extends Component {
-  
+class OpenInvoices extends Component {
   constructor(props) {
     super(props);
     
@@ -10,14 +9,15 @@ class Openinvoices extends Component {
       openinvoices: []
     }  
   }
-      
-  componentDidMount() {
-    fetch("https://inlupp-fa.azurewebsites.net/api/open-invoices")
-    .then(res => res.json())
-    .then(data => {
-    this.setState({openinvoices: data})
-    })
-  }
+
+    componentDidMount() {
+      fetch("https://inlupp-fa.azurewebsites.net/api/open-invoices")
+      .then(res => res.json())
+      .then(data => {
+      this.setState({openinvoices: data})
+      })
+    }
+    
     render() { 
         return ( 
             <div className="row">
@@ -43,9 +43,9 @@ class Openinvoices extends Component {
                         </tr>
                       </thead>
                       <tbody>
-                       
-                      {this.state.openinvoices.map((openinvoice) => (<Openinvoice key={openinvoice.customer} openinvoice={openinvoice} />))}
-
+                        
+                      { this.state.openinvoices.map((openinvoice) => (<Openinvoice key={openinvoice.customer} openinvoice={openinvoice} />)) }
+                      
                       </tbody>
                     </table>
                   </div>
@@ -57,4 +57,4 @@ class Openinvoices extends Component {
     }
 }
  
-export default Openinvoices;
+export default OpenInvoices;
