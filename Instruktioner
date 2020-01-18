@@ -72,3 +72,8 @@ Installera även extention vetur
 Övrigt: 
 1. installera bootstrap genom NPM: npm install bootstrap
 2. lägg till bootstrap i index.js
+
+LOOP:
+VUE: <Message v-for="message of messages" :key="message.from" />  
+Angular: <Message ngFor="message of messages" key="message.from" /> 
+React: { this.state.messages.map((message) => (<Message key={message.from} message={message} />)) }
